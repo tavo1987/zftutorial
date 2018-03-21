@@ -1,0 +1,24 @@
+<?= $this->doctype() ?>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zend Framework Quickstart Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-grey-lighter text-black">
+    <header class="bg-indigo-lighter">
+        <div class="container mx-auto p-4 flex justify-between">
+            <div class="font-bold text-indigo-darken">ZF Quickstart Application</div>
+            <div>
+                <a class="text-indigo-darken no-underline" href="<?= $this->url(['controller' => 'books'], 'default',true) ?>">Book LIst</a>
+            </div>
+        </div>
+    </header>
+    <div class="container mx-auto">
+        <?php echo $this->layout()->content ?>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+<div class="py-6">
+    <?php foreach ($this->books as $key => $book):?>
+        <div class="mb-4 shadow  bg-white px-4 py-6 rounded">
+            <h2 class="mb-1 text-blue-light font-normal uppercase text-lg"><?= $book->title ?></h2>
+            <smal class="text-grey"><?= $book->author ?></smal>
+        </div>
+    <?php endforeach?>
+</div>
