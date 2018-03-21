@@ -18,6 +18,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $this->bootstrap('view');
         $view = $this->getResource('view');
         $view->doctype('HTML5');
+        $view->headTitle()->setSeparator(' | ');
+        $view->headTitle('Zend Framework Tutorial');
     }
 }
 

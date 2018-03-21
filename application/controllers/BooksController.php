@@ -24,6 +24,7 @@ class BooksController extends Zend_Controller_Action
         $request = $this->getRequest();
         $form    = new Application_Form_BooksForm();
         $this->view->form = $form;
+        $this->view->headTitle('Add new Book', 'PREPEND');
 
         if ($this->getRequest()->isPost()) {
             if ($form->isValid($request->getPost())) {
