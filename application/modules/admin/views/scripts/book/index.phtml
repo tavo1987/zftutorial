@@ -1,6 +1,9 @@
-<h2>Books</h2>
-<dl>
-    <?php foreach ($this->entries as $entry): ?>
-        <dt><?php echo $this->escape($entry->title) ?></dt>     
-    <?php endforeach ?>
-</dl>
+<div class="py-6">
+    <?php foreach ($this->books as $key => $book):?>
+        <div class="mb-4 shadow  bg-white px-4 py-6 rounded">
+            <h2 class="mb-2 text-blue-light font-normal uppercase text-lg"><?= $book->title ?></h2>
+            <smal class="text-grey block">Author: <?= $book->author ?></smal>
+            <smal class="text-grey block">Creado: <?= $book->created ?></smal>
+        </div>
+    <?php endforeach?>
+</div>
