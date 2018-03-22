@@ -28,6 +28,29 @@
         </div>
     </header>
     <div class="container mx-auto py-6">
+        <!-- Global notification handling to use call flashMessenger action helper -->
+        <?php $flashMessenger = Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger'); ?>
+        <?php if ($flashMessenger->setNamespace('success')->hasMessages()): ?>
+            <div class="bg-green-lightest border-l-4 border-green text-green-dark p-4" role="alert">
+                <ul>
+                    <?php foreach ($flashMessenger->getMessages() as $msg): ?>
+                        <li><?= $msg ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($flashMessenger->setNamespace('error')->hasMessages()): ?>
+            <div class="bg-red-lightest border-l-4 border-red text-red-dark p-4" role="alert">
+                <ul>
+                    <?php foreach ($flashMessenger->getMessages() as $msg): ?>
+                        <li><?= $msg ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
+        <!--content--->
         <?php echo $this->layout()->content ?>
     </div>
 </body>
