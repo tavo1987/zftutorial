@@ -1,6 +1,6 @@
 <?php
 
-class BooksController extends Zend_Controller_Action
+class Admin_BookController extends Zend_Controller_Action
 {
 
     public function init()
@@ -13,16 +13,10 @@ class BooksController extends Zend_Controller_Action
         // action body
     }
 
-    public function listAction()
-    {
-        $books = new Model_Books();
-        $this->view->books = $books->fetchAll();
-    }
-
     public function addAction()
     {
         $request = $this->getRequest();
-        $form    = new Application_Form_BooksForm();
+        $form    = new Admin_Form_BookForm();
         $this->view->form = $form;
         $this->view->headTitle('Add new Book', 'PREPEND');
 
@@ -34,9 +28,22 @@ class BooksController extends Zend_Controller_Action
                 //return $this->_helper->redirector('index');
             }
         }
-
     }
+
+    public function editAction()
+    {
+        // action body
+    }
+
+    public function deleteAction()
+    {
+        // action body
+    }
+
+
 }
+
+
 
 
 

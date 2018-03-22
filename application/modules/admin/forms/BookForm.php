@@ -1,6 +1,6 @@
 <?php
 
-class Application_Form_BooksForm extends Zend_Form
+class Admin_Form_BookForm extends Zend_Form
 {
     public function init()
     {

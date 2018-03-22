@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <?= $this->headTitle(); ?>
-
     <?= $this->headLink()->prependStylesheet('https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css'); ?>
-
 </head>
 <body class="bg-grey-lighter text-black">
     <header class="bg-indigo-lighter">
         <div class="container mx-auto p-4 flex justify-between">
             <div class="font-bold text-indigo-darken">ZF Quickstart Application</div>
             <div>
-                <a class="text-white no-underline bg-indigo-light px-3 py-2 rounded" href="<?= $this->url(['controller' => 'books', 'action' => 'list']) ?>">Books</a>
-                <a class="text-white no-underline bg-indigo-light px-3 py-2 rounded" href="<?= $this->url(['controller' => 'books', 'action' => 'add']) ?>">Add new book</a>
+                <a class="text-white no-underline bg-indigo-light px-3 py-2 rounded mr-2"
+                   href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default')) ?>">
+                    Home
+                </a>
+                <a class="text-white no-underline bg-indigo-light px-3 py-2 rounded mr-2"
+                   href="<?= $this->url(array('controller' => 'books', 'action' => 'list', 'module' => 'library')) ?>">
+                    Books
+                </a>
+                <a class="text-white no-underline bg-indigo-light px-3 py-2 rounded"
+                   href="<?= $this->url(array('controller' => 'book', 'action' => 'add', 'module' => 'admin')) ?>">
+                    Add new book
+                </a>
             </div>
         </div>
     </header>
