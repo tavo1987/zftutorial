@@ -23,10 +23,14 @@ class Admin_BookController extends Zend_Controller_Action
 
         if ($this->getRequest()->isPost()) {
             if ($form->isValid($request->getPost())) {
-                $requestData = $form->getValues();
-                var_dump($requestData);
-                exit;
-                //return $this->_helper->redirector('index');
+                $requestData = (object) $form->getValues();
+                $book = new Admin_Model_Book();
+                $book->setTitle($requestData->title);
+                $book->setAuthor($requestData->author);
+
+                $bookMapper = new Admin_Model_BookMapper();
+                $bookMapper->save($book);
+                return $this->_helper->redirector('index');
             }
         }
     }
@@ -38,10 +42,12 @@ class Admin_BookController extends Zend_Controller_Action
 
     public function deleteAction()
     {
-        // action body
+        $bookMapper = new Admin_Model_BookMapper();
+        $bookMapper->delete($this->getRequest()->book_id);
+
+        $this->_helper->flashMessenger->setNamespace('success')->addMessage('Book deleted!');
+        return $this->_helper->redirector('index');
     }
-
-
 }
 
 

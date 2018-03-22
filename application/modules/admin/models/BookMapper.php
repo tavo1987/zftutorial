@@ -40,6 +40,11 @@ class Admin_Model_BookMapper
         }
     }
 
+    public function delete($id)
+    {
+        $this->getDbTable()->delete('books', "id = $id");
+    }
+
     public function find($id, Admin_Model_Book $book)
     {
         $result = $this->getDbTable()->find($id);
