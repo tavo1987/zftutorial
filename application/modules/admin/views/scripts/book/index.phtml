@@ -1,9 +1,21 @@
 <div class="py-6">
     <?php foreach ($this->books as $key => $book):?>
-        <div class="mb-4 shadow  bg-white px-4 py-6 rounded">
+    <div class="mb-4 rounded bg-white shadow">
+        <div class="px-4 py-6 ">
             <h2 class="mb-2 text-blue-light font-normal uppercase text-lg"><?= $book->title ?></h2>
             <smal class="text-grey block">Author: <?= $book->author ?></smal>
-            <smal class="text-grey block">Creado: <?= $book->created ?></smal>
+            <smal class="text-grey block">Created: <?= $book->created ?></smal>
+
         </div>
+        <div class="bg-grey-lightest p-4">
+            <a class="bg-blue-light text-white no-underline py-1 px-4 border border-blue-lightest rounded inline-block" href="">Editar</a>
+            <form class="inline-block" action="<?= $this->url(array('controller' => 'book', 'action' => 'delete', 'module' => 'admin')) ?>" method="post">
+                <input type="hidden" value="<?= $book->id ?>" name="book_id">
+                <button class=" text-grey no-underline py-1 px-4 border rounded inline-block">
+                    Borrar
+                </button>
+            </form>
+        </div>
+    </div>
     <?php endforeach?>
 </div>
