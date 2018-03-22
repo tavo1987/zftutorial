@@ -58,12 +58,12 @@ class Admin_Model_BookMapper
         $resultSet = $this->getDbTable()->fetchAll();
         $entries   = array();
         foreach ($resultSet as $row) {
-            $entry = new Admin_Model_Book();
-            $entry->setId($row->id)
+            $book = new Admin_Model_Book();
+            $book->setId($row->id)
                 ->setTitle($row->title)
                 ->setAuthor($row->author)
                 ->setCreated($row->created);
-            $entries[] = $entry;
+            $entries[] = $book;
         }
         return $entries;
     }
