@@ -60,7 +60,13 @@
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
           </layoutsDirectory>
-          <modelsDirectory/>
+          <modelsDirectory>
+            <dbTableDirectory>
+              <dbTableFile dbTableName="Book"/>
+            </dbTableDirectory>
+            <modelFile modelName="BookMapper"/>
+            <modelFile modelName="Book"/>
+          </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory/>
             <viewHelpersDirectory/>
@@ -75,7 +81,11 @@
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
           </layoutsDirectory>
-          <modelsDirectory/>
+          <modelsDirectory>
+            <dbTableDirectory>
+              <dbTableFile dbTableName="Books"/>
+            </dbTableDirectory>
+          </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory/>
             <viewHelpersDirectory/>

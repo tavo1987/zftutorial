@@ -10,7 +10,8 @@ class Admin_BookController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $guestbook = new Admin_Model_BookMapper();
+        $this->view->entries = $guestbook->fetchAll();
     }
 
     public function addAction()
