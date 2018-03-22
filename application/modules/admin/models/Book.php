@@ -61,7 +61,7 @@ class Admin_Model_Book
         return $this;
     }
 
-    public function geAuthor()
+    public function getAuthor()
     {
         return $this->_author;
     }
